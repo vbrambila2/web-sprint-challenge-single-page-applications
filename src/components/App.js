@@ -2,6 +2,7 @@ import React from "react";
 import Homepage from "./Homepage";
 import Form from "./Form";
 import { Route, Switch } from 'react-router-dom';
+import '../App.css';
 
 const App = () => {
   return (

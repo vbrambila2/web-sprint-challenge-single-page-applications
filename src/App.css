@@ -1,3 +1,7 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -36,3 +40,90 @@
     transform: rotate(360deg);
   }
 }
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+h4 {
+  display: flex;
+  justify-content: center;
+}
+
+label {
+  font-weight: bold;
+  margin: 1em;
+  width: 100%;
+}
+
+input {
+  padding: 1em;
+  margin: 1em;
+  width: 100%;
+}
+
+.toppings {
+  font-weight: bold;
+  padding: 1em;
+}
+
+.toppings input {
+  padding: 0;
+  margin: 0;
+  width: auto;
+}
+
+.spacer {
+  margin: 1em;
+}
+
+select {
+  width: 100%;
+  padding: 1em;
+  margin: 1em;
+}
+
+textarea {
+  width: 100%;
+  margin: 1em;
+}
+
+button {
+  width: 100%;
+  padding: 1em;
+  margin: 1em;
+  border: none;
+  border-radius: 1em;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+
+
+/* button {
+  font-weight: bold;
+  float: left;
+  clear: left;
+  text-align: left;
+  margin: 0.5em auto;
+} */
+
+.home-btn {
+  display: flex;
+  justify-content: center;
+}
+
+/* .toppings {
+  float: left;
+  clear: left;
+  text-align: left;
+}
+
+.special {
+  float: left;
+  clear: left;
+  text-align: left;
+} */
