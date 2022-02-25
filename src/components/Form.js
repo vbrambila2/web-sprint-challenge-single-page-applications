@@ -11,18 +11,26 @@ const StyledForm = styled.div
     margin: 1em;
 `
 
-export default function Form() {
+export default function Form(props) {
+    const { values, submit } = props;
+
+    const onSubmit = evt => {
+        evt.preventDefault()
+        submit()
+    }
+
     return (
         <div>
             <Link to="/" className="home-btn">Home</Link>
             <StyledForm>
-                <form id="pizza-form">
+                <form id="pizza-form" onSubmit={onSubmit}>
                     <label>Name:
                         <input 
                             id="name-input"
                             type="text"
                             name="name"
                             placeholder="Name"
+                            value={values.name}
                         />
                     </label>
                     <br />
@@ -32,6 +40,7 @@ export default function Form() {
                             name="phone"
                             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                             placeholder="123-456-7890"
+                            value={values.phone}
                         />
                     </label>
                     <br />
@@ -39,9 +48,9 @@ export default function Form() {
                         <select
                             id="size-dropdown"
                             name="size"
-                            defaultValue="select"
+                            value={values.size}
                         >
-                            <option disabled selected value></option>
+                            <option value="">select</option>
                             <option value="small">Small</option>
                             <option value="medium">Medium</option>
                             <option value="large">Large</option>
@@ -51,9 +60,9 @@ export default function Form() {
                     <label>Sauce:
                         <select
                             name="sauce"
-                            defaultValue="select"
+                            value={values.sauce}
                         >
-                            <option disabled selected value></option>
+                            <option value="">select</option>
                             <option value="red">Red</option>
                             <option value="white">White</option>
                             <option value="mayo">Mayo</option>
@@ -64,17 +73,17 @@ export default function Form() {
                     <div className="toppings">Toppings: 
                         <br />
                         <div className="spacer"></div>
-                        <input type="checkbox" id="pepperoni" name="pepperoni"  />
-                        <label for="pepperoni">Pepperoni</label>
+                        <input type="checkbox" id="pepperoni" name="pepperoni" checked={values.pepperoni} />
+                        <label>Pepperoni</label>
                         <br/>
-                        <input type="checkbox" id="pineapple" name="pineapple"  />
-                        <label for="pineapple">Pineapple</label>
+                        <input type="checkbox" id="pineapple" name="pineapple" checked={values.pineapple} />
+                        <label>Pineapple</label>
                         <br/>
-                        <input type="checkbox" id="pepperoni" name="pepperoni"  />
-                        <label for="pepperoni">Pepperoni</label>
+                        <input type="checkbox" id="cheese" name="cheese" checked={values.cheese} />
+                        <label>Cheese</label>
                         <br/>
-                        <input type="checkbox" id="pineapple" name="pineapple"  />
-                        <label for="pineapple">Pineapple</label>
+                        <input type="peanuts" id="peanuts" name="peanuts" checked={values.peanuts} />
+                        <label>Peanuts</label>
                     </div>
                     <br />
                     <label className="special">Special Instructions:
@@ -83,6 +92,7 @@ export default function Form() {
                         <textarea
                             id="special-text"
                             name="special"
+                            value={values.special}
                         >
                         </textarea>
                     </label>
