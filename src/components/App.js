@@ -1,5 +1,6 @@
 import React from "react";
 import Restaurants from "./Restaurants";
+import Form from "./Form";
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
         <button>Click to Begin</button>
       </div>
       <Restaurants />
+      <Form />
     </div>
   );
 };
