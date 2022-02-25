@@ -1,17 +1,20 @@
 import React from "react";
-import Restaurants from "./Restaurants";
+import Homepage from "./Homepage";
 import Form from "./Form";
+import { Route, Switch } from 'react-router-dom';
 
 const App = () => {
   return (
     <div>
       <h1>Lambda Eats</h1>
-      <h3>Add some CSS to your pizza by clicking the button below</h3>
-      <div>
-        <button>Click to Begin</button>
-      </div>
-      <Restaurants />
-      <Form />
+      <Switch>
+        <Route path="/pizza">
+          <Form />  
+        </Route>
+        <Route exact path="/">
+          <Homepage />
+        </Route>
+      </Switch>
     </div>
   );
 };
