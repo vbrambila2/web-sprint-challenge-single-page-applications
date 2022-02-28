@@ -12,7 +12,7 @@ const StyledForm = styled.div
 `
 
 export default function Form(props) {
-    const { values, submit, change } = props;
+    const { values, submit, change, errors } = props;
 
     const onSubmit = evt => {
         evt.preventDefault()
@@ -30,6 +30,13 @@ export default function Form(props) {
             <Link to="/" className="home-btn">Home</Link>
             <StyledForm>
                 <form id="pizza-form" onSubmit={onSubmit}>
+                    <div className='errors'>
+                        <div>{errors.name}</div>
+                        <div>{errors.phone}</div>
+                        <div>{errors.size}</div>
+                        <div>{errors.sauce}</div>
+                        <div>{errors.special}</div>
+                    </div>
                     <label>Name:
                         <input 
                             id="name-input"

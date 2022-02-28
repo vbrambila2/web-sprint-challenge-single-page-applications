@@ -24,7 +24,7 @@ export default function Homepage() {
             <StyledHome>
                 <h3>Add some CSS to your pizza by clicking the button below</h3>
                 <div>
-                    <Link to="/pizza">Click to Begin</Link>
+                    <Link id="order-pizza" to="/pizza">Click to Begin</Link>
                 </div>
             </StyledHome>
             <h4>Try some of our other fantastic partners!</h4>
