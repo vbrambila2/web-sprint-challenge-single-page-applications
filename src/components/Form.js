@@ -9,6 +9,10 @@ const StyledForm = styled.div
     justify-content: center;
     padding: 1em;
     margin: 1em;
+    background-color: #fffff6;
+    border: solid 0.5em black;
+    border-radius: 0.5em;
+    padding: 3em;
 `
 
 export default function Form(props) {
@@ -26,7 +30,7 @@ export default function Form(props) {
     }
 
     return (
-        <div>
+        <div className="form-page">
             <Link to="/" className="home-btn">Home</Link>
             <StyledForm>
                 <form id="pizza-form" onSubmit={onSubmit}>
@@ -105,7 +109,6 @@ export default function Form(props) {
                     <br />
                     <label className="special">Special Instructions:
                         <br />
-                        <div className="spacer"></div>
                         <textarea
                             id="special-text"
                             name="special"
