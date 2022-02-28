@@ -1,54 +1,72 @@
 *, *:before, *:after {
   box-sizing: border-box;
+  font-family: 'Lobster Two', cursive;
+  letter-spacing: 0.05em;
 }
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-home {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: red;
+  margin: 0; 
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1em black;
+  border-radius: 0.5em;
+  padding: 1em;
+  width: 60em;
+  height: 100%;
+  background-color: #fffff6;
 }
 
 h1 {
   display: flex;
   justify-content: center;
+  padding: 0.7em;
+  background-color: #fffff6;
+  border: solid 0.2em black;
+  border-radius: 1em;
+  width: 12em;
+  font-size: 3em;
 }
 
 h4 {
   display: flex;
   justify-content: center;
+  font-size: 1.2em;
+}
+
+.pizza-link-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pizza-btn {
+  display: flex;
+  justify-content: center;
+  background-color: red;
+  border: solid 0.2em black;
+  border-radius: 1em;
+  padding: 0.5em;
+  width: 10em;
+}
+
+#order-pizza {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.4em;
+  color: #fffff6; 
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#order-pizza:visited {
+  color:#fffff6;
 }
 
 label {
@@ -101,29 +119,32 @@ button:hover {
   cursor: pointer;
 }
 
-
-
-/* button {
-  font-weight: bold;
-  float: left;
-  clear: left;
-  text-align: left;
-  margin: 0.5em auto;
-} */
-
 .home-btn {
   display: flex;
   justify-content: center;
 }
 
-/* .toppings {
-  float: left;
-  clear: left;
-  text-align: left;
+.options {
+  background-color: #fffff6;
+  border: solid 0.2em black;
+  border-radius: 0.5em;
+  padding: 0 1em 0 1em;
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 14em;
+  font-size: 1.1em;
 }
 
-.special {
-  float: left;
-  clear: left;
-  text-align: left;
-} */
+.options h3 {
+  text-decoration: underline;
+}
+
+.pizza-image {
+  margin-top: 1em;
+  width: 25em;
+  height: 25em;
+  border: solid 0.5em black;
+  border-radius: 0.5em;
+}

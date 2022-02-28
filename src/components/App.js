@@ -64,7 +64,7 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div className="app-home">
       <h1>Lambda Eats</h1>
       <Switch>
         <Route path="/pizza">
