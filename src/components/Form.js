@@ -12,11 +12,17 @@ const StyledForm = styled.div
 `
 
 export default function Form(props) {
-    const { values, submit } = props;
+    const { values, submit, change } = props;
 
     const onSubmit = evt => {
         evt.preventDefault()
         submit()
+    }
+
+    const onChange = e => {
+        const { name, value, type, checked } = e.target;
+        const valueUsed = type === "checkbox" ? checked : value;
+        change(name, valueUsed);
     }
 
     return (
@@ -31,6 +37,7 @@ export default function Form(props) {
                             name="name"
                             placeholder="Name"
                             value={values.name}
+                            onChange={onChange}
                         />
                     </label>
                     <br />
@@ -41,6 +48,7 @@ export default function Form(props) {
                             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                             placeholder="123-456-7890"
                             value={values.phone}
+                            onChange={onChange}
                         />
                     </label>
                     <br />
@@ -49,6 +57,7 @@ export default function Form(props) {
                             id="size-dropdown"
                             name="size"
                             value={values.size}
+                            onChange={onChange}
                         >
                             <option value="">select</option>
                             <option value="small">Small</option>
@@ -61,6 +70,7 @@ export default function Form(props) {
                         <select
                             name="sauce"
                             value={values.sauce}
+                            onChange={onChange}
                         >
                             <option value="">select</option>
                             <option value="red">Red</option>
@@ -70,21 +80,21 @@ export default function Form(props) {
                         </select>
                     </label>
                     <br />
-                    <div className="toppings">Toppings: 
+                    <section className="toppings">Toppings: 
                         <br />
                         <div className="spacer"></div>
-                        <input type="checkbox" id="pepperoni" name="pepperoni" checked={values.pepperoni} />
+                        <input type="checkbox" id="pepperoni" name="pepperoni" checked={values.pepperoni} onChange={onChange} />
                         <label>Pepperoni</label>
                         <br/>
-                        <input type="checkbox" id="pineapple" name="pineapple" checked={values.pineapple} />
+                        <input type="checkbox" id="pineapple" name="pineapple" checked={values.pineapple} onChange={onChange} />
                         <label>Pineapple</label>
                         <br/>
-                        <input type="checkbox" id="cheese" name="cheese" checked={values.cheese} />
+                        <input type="checkbox" id="cheese" name="cheese" checked={values.cheese} onChange={onChange} />
                         <label>Cheese</label>
                         <br/>
-                        <input type="peanuts" id="peanuts" name="peanuts" checked={values.peanuts} />
+                        <input type="checkbox" id="peanuts" name="peanuts" checked={values.peanuts} onChange={onChange} />
                         <label>Peanuts</label>
-                    </div>
+                    </section>
                     <br />
                     <label className="special">Special Instructions:
                         <br />
@@ -93,6 +103,7 @@ export default function Form(props) {
                             id="special-text"
                             name="special"
                             value={values.special}
+                            onChange={onChange}
                         >
                         </textarea>
                     </label>
