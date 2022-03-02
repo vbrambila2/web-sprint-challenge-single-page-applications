@@ -107,15 +107,17 @@ textarea {
   margin: 1em;
 }
 
-button {
-  width: 100%;
-  padding: 1em;
-  margin: 1em;
+#order-button {
+  display: flex;
+  justify-content: center;
+  padding: 0.5em;
   border: solid 0.1em black;
   border-radius: 1em;
+  text-decoration: none;
+  width: 100%;
 }
 
-button:hover {
+#order-button:hover {
   cursor: pointer;
 }
 
@@ -161,4 +163,11 @@ button:hover {
   height: 25em;
   border: solid 0.5em black;
   border-radius: 0.5em;
+}
+
+.con-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

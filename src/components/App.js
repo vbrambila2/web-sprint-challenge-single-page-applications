@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Homepage from "./Homepage";
 import Form from "./Form";
-import { Route, Switch } from 'react-router-dom';
+import Confirmation from "./Confirmation";
+import { Switch, Route } from 'react-router-dom';
 import schema from '../validation/formSchema';
 import * as yup from 'yup';
 import '../App.css';
@@ -33,21 +34,6 @@ const App = () => {
   const [formErrors, setFormErrors] = useState(initialFormErrors)
   const [order, setOrder] = useState(initialOrder);
 
-  const formSubmit = () => {
-    const newOrder = {
-      name: formValues.name.trim(),
-      phone: formValues.phone,
-      size: formValues.size,
-      sauce: formValues.sauce,
-      toppings: ['pepperoni', 'pineapple', 'cheese', 'peanuts'].filter(topping => !!formValues[topping]),
-      special: formValues.special.trim()
-    }
-
-    setOrder(order.concat(newOrder));
-    setFormValues(initialFormValues);
-  }
-  console.log(order, "order");
-
   const validate = (name, value) => {
     yup.reach(schema, name)
     .validate(value)
@@ -63,21 +49,27 @@ const App = () => {
     })
   }
 
+  const formSubmit = () => {
+    const newOrder = {
+      name: formValues.name.trim(),
+      phone: formValues.phone,
+      size: formValues.size,
+      sauce: formValues.sauce,
+      toppings: ['pepperoni', 'pineapple', 'cheese', 'peanuts'].filter(topping => !!formValues[topping]),
+      special: formValues.special.trim()
+    }
+
+    setOrder(order.concat(newOrder));
+    setFormValues(initialFormValues);
+  }
+
   return (
     <div className="app-home">
       <h1>Lambda Eats</h1>
       <Switch>
-        <Route path="/pizza">
-          <Form 
-            values={formValues} 
-            submit={formSubmit} 
-            change={inputChange}
-            errors={formErrors}
-          />  
-        </Route>
-        <Route exact path="/">
-          <Homepage />
-        </Route>
+        <Route path="/confirmation"><Confirmation values={formValues} /></Route>
+        <Route path="/pizza"> <Form values={formValues} submit={formSubmit} change={inputChange}errors={formErrors} /></Route>
+        <Route exact path="/"><Homepage /></Route>
       </Switch>
     </div>
   );
