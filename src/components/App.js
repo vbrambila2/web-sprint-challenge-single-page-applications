@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Homepage from "./Homepage";
 import Form from "./Form";
 import Confirmation from "./Confirmation";
 import { Switch, Route } from 'react-router-dom';
 import schema from '../validation/formSchema';
 import * as yup from 'yup';
+import axios from 'axios';
 import '../App.css';
 
 const initialFormValues = {
@@ -34,6 +35,23 @@ const App = () => {
   const [formErrors, setFormErrors] = useState(initialFormErrors)
   const [order, setOrder] = useState(initialOrder);
 
+  const getOrders = () => {
+    axios.get(`https://reqres.in/api/orders`)
+      .then(res => {
+        setOrder(res.data);
+      })
+      .catch(err => console.error(err))
+  }
+
+  const postNewOrder = newOrder => {
+    axios.post(`https://reqres.in/api/orders`, newOrder)
+      .then(res => {
+        setOrder(res.data, ...order);
+        setFormValues(initialFormValues);
+      })
+      .catch(err => console.error(err))
+  }
+
   const validate = (name, value) => {
     yup.reach(schema, name)
     .validate(value)
@@ -59,9 +77,14 @@ const App = () => {
       special: formValues.special.trim()
     }
 
-    setOrder(order.concat(newOrder));
-    setFormValues(initialFormValues);
+    console.log(order, "order");
+
+    postNewOrder(newOrder)
   }
+
+  useEffect(() => {
+    getOrders()
+  }, [])
 
   return (
     <div className="app-home">

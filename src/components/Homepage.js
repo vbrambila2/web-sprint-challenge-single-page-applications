@@ -22,9 +22,8 @@ const StyledHomeOptions = styled.div
 `
     display: flex;
     justify-content: space-around;
-    border: solid 0.2em black;
     border-radius: 0.5em;
-    background-color: red;
+    background-color: #330000;
 `
 
 export default function Homepage() {

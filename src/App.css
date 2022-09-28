@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: red;
+  background-color: #990000;
   margin: 0; 
 }
 
@@ -16,7 +16,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid 1em black;
+  border: solid 0.4em #330000;
   border-radius: 0.5em;
   padding: 1em;
   width: 60em;
@@ -29,7 +29,7 @@ h1 {
   justify-content: center;
   padding: 0.7em;
   background-color: #fffff6;
-  border: solid 0.2em black;
+  border: solid 0.1em #330000;
   border-radius: 1em;
   width: 12em;
   font-size: 3em;
@@ -50,8 +50,8 @@ h4 {
 .pizza-btn {
   display: flex;
   justify-content: center;
-  background-color: red;
-  border: solid 0.2em black;
+  background-color: #990000;
+  border: solid 0.2em #330000;
   border-radius: 1em;
   padding: 0.5em;
   width: 10em;
@@ -142,7 +142,6 @@ textarea {
 
 .options {
   background-color: #fffff6;
-  border: solid 0.2em black;
   border-radius: 0.5em;
   padding: 0 1em 0 1em;
   margin: 1em;
@@ -161,7 +160,7 @@ textarea {
   margin-top: 1em;
   width: 25em;
   height: 25em;
-  border: solid 0.5em black;
+  border: solid 0.4em #330000;
   border-radius: 0.5em;
 }
 
