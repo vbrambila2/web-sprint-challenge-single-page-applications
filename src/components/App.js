@@ -88,7 +88,7 @@ const App = () => {
 
   return (
     <div className="app-home">
-      <h1>Lambda Eats</h1>
+      <h1>Pizzeria Brambila</h1>
       <Switch>
         <Route path="/confirmation"><Confirmation values={formValues} /></Route>
         <Route path="/pizza"> <Form values={formValues} submit={formSubmit} change={inputChange}errors={formErrors} /></Route>
